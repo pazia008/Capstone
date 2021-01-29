@@ -38,8 +38,8 @@ export const Login = props => {
 
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Nashville Kennels</h1>
-                    <h2>Please sign in</h2>
+                    <h1>Travel Plan</h1>
+                    <h2>Please sign in 😊</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input ref={email} type="email"
