@@ -1,13 +1,18 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import "./Trip.css"
 import { useHistory } from "react-router-dom";
 import { TripContext } from "./TripProvider";
+import { UserContext } from "../user/UserProvider";
 
 export const TripForm = () => {
     const { addTrips } = useContext(TripContext)
+    const { getUsers} = useContext(UserContext)
+
+    // const userId = sessionStorage.getItem('activeUser')
+
 
     const [trip, setTrip] = useState({
-        userId: 0,
+        userId: parseInt(localStorage.getItem('travel_user')),
         location: "",
         dateOfDeparture: "",
         returnDate: "",
@@ -16,6 +21,10 @@ export const TripForm = () => {
     });
 
     const history = useHistory();
+
+    useEffect(() => {
+        getUsers()
+      }, [])
 
     const handleControlledInputChange = (event) => {
       const newTrip = { ...trip }
