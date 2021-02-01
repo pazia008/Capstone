@@ -44,7 +44,7 @@ export const Login = props => {
                         <label htmlFor="inputEmail"> Email address </label>
                         <input ref={email} type="email"
                             id="email"
-                            className="form-control"
+                            className="form-email"
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
