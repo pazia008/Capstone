@@ -4,7 +4,7 @@ import { TripCard } from "./TripCard"
 import { TripContext } from "./TripProvider"
 
 export const TripList = () => {
-  
+    
   const { trips, getTrips } = useContext(TripContext)
 
   useEffect(() => {

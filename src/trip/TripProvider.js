@@ -27,9 +27,16 @@ export const TripProvider = (props) => {
     }
 
 
+
+    const getTripById = (id) => {
+        return fetch(`http://localhost:8088/trips/${id}`)
+            .then(res => res.json())
+    }
+
+
     return (
         <TripContext.Provider value={{
-            trips, getTrips, addTrips
+            trips, getTrips, addTrips, getTripById
         }}>
             {props.children}
         </TripContext.Provider>
