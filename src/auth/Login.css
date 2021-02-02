@@ -71,6 +71,7 @@ fieldset {
 
 .form--login {
     background-position-x: right;
+    background-image: url(minimal.png);
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;
