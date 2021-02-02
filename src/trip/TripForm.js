@@ -58,7 +58,7 @@ export const TripForm = () => {
           </fieldset>
           <fieldset>
               <div className="form-group">
-                  <label htmlFor="dateOfDeparture">Date Of Departure:</label>
+                  <label htmlFor="dateOfDeparture">Date of Departure:</label>
                   <input type="text" id="dateOfDeparture" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Date of Departure" value={trip.dateOfDeparture}/>
               </div>
           </fieldset>
@@ -70,8 +70,8 @@ export const TripForm = () => {
           </fieldset>
           <fieldset>
               <div className="form-group">
-                  <label htmlFor="transportType">Type Of Transportation:</label>
-                  <input type="text" id="transportType" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Type Of Transportation" value={trip.transportType}/>
+                  <label htmlFor="transportType">Type of Transportation:</label>
+                  <input type="text" id="transportType" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Type of Transportation" value={trip.transportType}/>
               </div>
           </fieldset>
           <fieldset>
