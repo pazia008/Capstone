@@ -34,9 +34,17 @@ export const TripProvider = (props) => {
     }
 
 
+
+    const deleteTrip = tripId => {
+        return fetch(`http://localhost:8088/trips/${tripId}`, {
+            method: "DELETE"
+        })
+            .then(getTrips)
+    }
+
     return (
         <TripContext.Provider value={{
-            trips, getTrips, addTrips, getTripById
+            trips, getTrips, addTrips, getTripById, deleteTrip
         }}>
             {props.children}
         </TripContext.Provider>
