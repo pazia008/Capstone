@@ -11,9 +11,21 @@ export const CategoryProvider = (props) => {
         .then(setCategories)
     }
 
+    const addCategories = categoryObj => {
+        return fetch("http://localhost:8088/category", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(categoryObj)
+        })
+        .then(getCategories)
+    
+    }
+
     return (
         <CategoryContext.Provider value={{
-            catergories, getCategories 
+            catergories, getCategories, addCategories 
         }}>
             {props.children}
         </CategoryContext.Provider>

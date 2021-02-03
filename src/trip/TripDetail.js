@@ -45,7 +45,7 @@ console.log(tripCosts)
         <h3 className="trip__cost">Costs:</h3>
   <ul>{tripCosts.map(costObject => <li>{costObject.name}: ${costObject.cost}</li>)}</ul>
         <button onClick={() => {
-             //have to invoke a function that adds an expense object
+            history.push(`/trips/costs/${trip.id}`)          
                 }}>Add an Expense</button>
      </div>
      <button onClick={handleRelease}>Delete Trip</button>
