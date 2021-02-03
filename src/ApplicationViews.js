@@ -1,5 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { CostProvider } from "./cost/CostProvider"
 import { Home } from "./home/Home"
 import { TripDetail } from "./trip/TripDetail"
 import { TripForm } from "./trip/TripForm"
@@ -19,7 +20,8 @@ export const ApplicationViews = () => {
 
         <TripProvider>
             <UserProvider>
-
+                <CostProvider>
+                    
             <Route exact path="/tripform">
                 <TripForm/>
             </Route>
@@ -32,6 +34,7 @@ export const ApplicationViews = () => {
                 <TripDetail/>
             </Route>
 
+                </CostProvider>
             </UserProvider>
         </TripProvider>
         </>

@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from "react"
 import "./Trip.css"
 import { useParams, useHistory } from "react-router-dom"
 import { TripContext } from "./TripProvider"
+import { CostContext } from "../cost/CostProvider"
 
 export const TripDetail = () => {
   const { getTripById, deleteTrip } = useContext(TripContext)
+  const { getCosts, costs} = useContext(CostContext)
 
 	const [trip, setTrip] = useState({})
 
@@ -24,7 +26,12 @@ export const TripDetail = () => {
     .then((response) => {
       setTrip(response)
     })
+    .then(getCosts)
     }, [])
+
+    const tripCosts = costs.filter(costObj => costObj.tripId === parseInt(tripId))
+console.log(tripCosts)
+
 
   return (
     <section className="trip">
@@ -33,7 +40,15 @@ export const TripDetail = () => {
       <div className="trip__returnDate">Return Date: {trip.returnDate}</div>
       <div className="trip__transportType">Type of Transportation: {trip.transportType}</div>
       <div className="trip__placeOfStay">Accommodation: {trip.placeOfStay}</div>
-      <button onClick={handleRelease}>Delete Trip</button>
+      
+      <div>
+        <h3 className="trip__cost">Costs:</h3>
+  <ul>{tripCosts.map(costObject => <li>{costObject.name}: ${costObject.cost}</li>)}</ul>
+        <button onClick={() => {
+             //have to invoke a function that adds an expense object
+                }}>Add an Expense</button>
+     </div>
+     <button onClick={handleRelease}>Delete Trip</button>
     </section>
   )
 }
