@@ -7,6 +7,7 @@ export const TripList = () => {
     
   const { trips, getTrips } = useContext(TripContext)
 
+
   useEffect(() => {
     console.log("TripList: useEffect - getTrips")
     getTrips()
@@ -18,7 +19,8 @@ export const TripList = () => {
       {console.log("TripList: Render", trips)}
       {
         trips.map(trip => {
-          return <TripCard key={trip.id} trip={trip} />
+          return <TripCard key={trip.id} trip={trip}
+           />
         })
       }
     </div>
