@@ -1,5 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { CategoryForm } from "./cost/CategoryForm"
+import { CategoryProvider } from "./cost/CategoryProvider"
 import { CostProvider } from "./cost/CostProvider"
 import { Home } from "./home/Home"
 import { TripDetail } from "./trip/TripDetail"
@@ -21,7 +23,8 @@ export const ApplicationViews = () => {
         <TripProvider>
             <UserProvider>
                 <CostProvider>
-                    
+                    <CategoryProvider>
+
             <Route exact path="/tripform">
                 <TripForm/>
             </Route>
@@ -34,9 +37,16 @@ export const ApplicationViews = () => {
                 <TripDetail/>
             </Route>
 
+            <Route exact path="/trips/costs/:tripId(\d+)">
+                <CategoryForm/>
+            </Route>
+
+                    </CategoryProvider>
                 </CostProvider>
             </UserProvider>
         </TripProvider>
+
+
         </>
 
         
