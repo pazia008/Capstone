@@ -3,7 +3,7 @@ import React, { useState, createContext } from "react"
 export const CategoryContext = createContext()
 
 export const CategoryProvider = (props) => {
-    const [catergories, setCategories] = useState([])
+    const [categories, setCategories] = useState([])
 
     const getCategories = () => {
         return fetch("http://localhost:8088/category")
@@ -11,9 +11,10 @@ export const CategoryProvider = (props) => {
         .then(setCategories)
     }
 
+
     return (
         <CategoryContext.Provider value={{
-            catergories, getCategories 
+            categories, getCategories
         }}>
             {props.children}
         </CategoryContext.Provider>

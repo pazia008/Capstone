@@ -12,9 +12,21 @@ export const CostProvider = (props) => {
         .then(setCosts)
     }
 
+    const addCosts = costObj => {
+        return fetch("http://localhost:8088/costs", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(costObj)
+        })
+        .then(getCosts)
+    
+    }
+
     return (
         <CostContext.Provider value={{
-            costs, getCosts 
+            costs, getCosts, addCosts
         }}>
             {props.children}
         </CostContext.Provider>
