@@ -6,7 +6,7 @@ export const PackingCategoryProvider = (props) => {
     const [packCategories, setPackCategories] = useState([])
 
     const getPackingCategories = () => {
-        return fetch("http://localhost:8088/packingCategory")
+        return fetch("http://localhost:8088/packingCategories")
         .then(res => res.json())
         .then(setPackCategories)
     }

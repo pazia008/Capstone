@@ -7,13 +7,13 @@ export const PackProvider = (props) => {
     const [packs, setPacks] = useState([])
 
     const getPacks = () => {
-        return fetch("http://localhost:8088/packing")
+        return fetch("http://localhost:8088/packs")
         .then(res => res.json())
         .then(setPacks)
     }
 
     const addPacks = costObj => {
-        return fetch("http://localhost:8088/packing", {
+        return fetch("http://localhost:8088/packs", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

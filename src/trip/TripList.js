@@ -13,16 +13,20 @@ export const TripList = () => {
     getTrips()
   }, [])
 
+const currentUserTrips = trips.filter(userTripObj => userTripObj.userId === parseInt(localStorage.getItem("travel_user")))
+
 
   return (
     <div className="trips">
       {console.log("TripList: Render", trips)}
       {
-        trips.map(trip => {
+        currentUserTrips.map(trip => {
           return <TripCard key={trip.id} trip={trip}
            />
         })
       }
     </div>
   )
+
+
 }
