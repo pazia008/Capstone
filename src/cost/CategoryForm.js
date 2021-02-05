@@ -1,27 +1,36 @@
 import React, { useContext, useState, useEffect } from "react"
 import "./Cost.css"
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams} from 'react-router-dom';
 import { CategoryContext } from "./CategoryProvider";
 import { CostContext } from "./CostProvider";
+import { TripContext } from "../trip/TripProvider";
+
 
 
 export const CategoryForm = () => {
   const { addCosts } = useContext(CostContext)
+  const {tripId} = useParams()
+  const { getTripById } = useContext(TripContext)
   const { categories, getCategories } = useContext(CategoryContext)
-
+  
+  const [trip, setTrip] = useState({})
   const [cost, setCosts] = useState({
-      id: parseInt(localStorage.getItem('travel_user')),
-      tripId: 0,
+      tripId: parseInt(tripId),
       categoryId: 0,
       name: "",
       cost: "" 
   });
 
   const history = useHistory();
+  
 
   useEffect(() => {
-    getCategories()
-  }, [])
+        getTripById(tripId)
+        .then(trip => {
+            setTrip(trip)
+        }).then(getCategories)
+      }, [])
+
 
 
   const handleControlledInputChange = (event) => {
@@ -39,7 +48,7 @@ export const CategoryForm = () => {
     event.preventDefault()
 
     addCosts(cost)
-      .then(() => history.push("/trips/detail/:tripId(/d+)"))
+      .then(() => history.push("/trips"))
 
   }
 console.log(categories)
@@ -50,7 +59,7 @@ console.log(categories)
       <fieldset>
           <div className="form-group">
             <label htmlFor="location">Add an Expense: </label>
-            <select value={cost.categoryId} name="categoryName" id="nameOfCategory" className="form-control" onChange={handleControlledInputChange}>
+            <select value={cost.categoryId} name="categoryName" id="categoryId" className="form-control" onChange={handleControlledInputChange}>
               <option value="0">Select an Expense</option>
               { categories.map(l => (
                 <option key={l.id} value={l.id}>
