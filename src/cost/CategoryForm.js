@@ -3,17 +3,16 @@ import "./Cost.css"
 import { useHistory, useParams} from 'react-router-dom';
 import { CategoryContext } from "./CategoryProvider";
 import { CostContext } from "./CostProvider";
-import { TripContext } from "../trip/TripProvider";
+
 
 
 
 export const CategoryForm = () => {
   const { addCosts } = useContext(CostContext)
   const {tripId} = useParams()
-  const { getTripById } = useContext(TripContext)
   const { categories, getCategories } = useContext(CategoryContext)
   
-  const [trip, setTrip] = useState({})
+  
   const [cost, setCosts] = useState({
       tripId: parseInt(tripId),
       categoryId: 0,
@@ -25,10 +24,7 @@ export const CategoryForm = () => {
   
 
   useEffect(() => {
-        getTripById(tripId)
-        .then(trip => {
-            setTrip(trip)
-        }).then(getCategories)
+        getCategories()
       }, [])
 
 
