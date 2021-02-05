@@ -3,10 +3,13 @@ import "./Trip.css"
 import { useParams, useHistory } from "react-router-dom"
 import { TripContext } from "./TripProvider"
 import { CostContext } from "../cost/CostProvider"
+import { PackContext } from "../pack/PackProvider"
+
 
 export const TripDetail = () => {
   const { getTripById, deleteTrip } = useContext(TripContext)
   const { getCosts, costs} = useContext(CostContext)
+  const { getPacks, packs} = useContext(PackContext)
 
 	const [trip, setTrip] = useState({})
 
@@ -27,10 +30,13 @@ export const TripDetail = () => {
       setTrip(response)
     })
     .then(getCosts)
+    .then(getPacks)
     }, [])
 
     const tripCosts = costs.filter(costObj => costObj.tripId === parseInt(tripId))
 console.log(tripCosts)
+const tripPack = packs.filter(packObj => packObj.tripId === parseInt(tripId))
+console.log(tripPack)
 
 
   return (
@@ -47,6 +53,14 @@ console.log(tripCosts)
         <button onClick={() => {
             history.push(`/trips/costs/${trip.id}`)          
                 }}>Add an Expense</button>
+     </div>
+
+     <div>
+        <h3 className="trip__pack">What to Pack:</h3>
+  <ul>{tripPack.map(packObject => <li>{packObject.name}</li>)}</ul>
+        <button onClick={() => {
+            history.push(`/trips/packing/${trip.id}`)          
+                }}>Need to Pack Something Else?</button>
      </div>
      <button onClick={handleRelease}>Delete Trip</button>
     </section>
