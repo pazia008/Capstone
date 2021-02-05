@@ -4,6 +4,7 @@ import { CategoryForm } from "./cost/CategoryForm"
 import { CategoryProvider } from "./cost/CategoryProvider"
 import { CostProvider } from "./cost/CostProvider"
 import { Home } from "./home/Home"
+import { PackProvider } from "./pack/PackProvider"
 import { TripDetail } from "./trip/TripDetail"
 import { TripForm } from "./trip/TripForm"
 import { TripList } from "./trip/TripList"
@@ -24,7 +25,7 @@ export const ApplicationViews = () => {
             <UserProvider>
                 <CostProvider>
                     <CategoryProvider>
-
+                        <PackProvider>
             <Route exact path="/tripform">
                 <TripForm/>
             </Route>
@@ -41,6 +42,7 @@ export const ApplicationViews = () => {
                 <CategoryForm/>
             </Route>
 
+                        </PackProvider>
                     </CategoryProvider>
                 </CostProvider>
             </UserProvider>
