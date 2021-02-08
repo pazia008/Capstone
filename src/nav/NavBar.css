@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
+    background-color: rgb(103, 105, 105);
 }
 
 .navbar__item {
@@ -10,9 +11,9 @@
 }
 
 .navbar__link {
-color: rgb(94, 88, 88);
+color: rgb(255, 255, 255);
 }
 
 .navbar__trips{
-    color: rgb(94, 88, 88);
+    color: rgb(255, 255, 255);
 }
