@@ -4,7 +4,10 @@ import { useHistory } from "react-router-dom"
 import "./Login.css"
 
 
+
+
 export const Login = props => {
+
     const email = useRef()
     const existDialog = useRef()
     const history = useHistory()
@@ -59,5 +62,6 @@ export const Login = props => {
                 <Link to="/register">Not a member yet?</Link>
             </section>
         </main>
+        
     )
 }
