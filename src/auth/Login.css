@@ -1,4 +1,4 @@
-.h1, h1 {
+.h1 {
     font-size: 2.5rem;
     text-align: center;
 }
@@ -8,7 +8,6 @@ fieldset {
     padding: 1rem 0;
     margin: 0;
     border: 0;
-    
 }
 
 
@@ -71,7 +70,6 @@ fieldset {
 
 .form--login {
     background-position-x: right;
-    background-image: url(minimal.png);
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;
@@ -90,3 +88,11 @@ fieldset {
     min-width: 15rem;
     min-height: 5rem;
 }
+
+a{
+    color: black;
+}
+
+
+
+
