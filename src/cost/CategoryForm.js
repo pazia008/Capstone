@@ -78,7 +78,7 @@ console.log(categories)
       <fieldset>
         <div className="form-group">
           <label htmlFor="cost">Cost:</label>
-          <input type="text" id="cost" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="$$$" value={cost.cost} />
+          <input type="number" id="cost" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="$$$" value={cost.cost} />
         </div>
       </fieldset>
 

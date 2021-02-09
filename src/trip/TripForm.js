@@ -40,11 +40,15 @@ export const TripForm = () => {
     }
 
     const handleClickSaveTrip = (event) => {
-
       event.preventDefault() 
 
-        addTrips(trip)
-        .then(() => history.push("/trips"))
+        if(trip.dateOfDeparture > trip.returnDate){
+            alert("Date of Departure Must be before Return Date");
+        }else{
+            addTrips(trip) 
+            .then(() => history.push("/trips")) 
+        }
+        
       }
     
 //the form on the dom that users will fill out to make a new trip
@@ -60,13 +64,13 @@ export const TripForm = () => {
           <fieldset>
               <div className="form-group">
                   <label htmlFor="dateOfDeparture">Date of Departure:</label>
-                  <input type="text" id="dateOfDeparture" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Date of Departure" value={trip.dateOfDeparture}/>
+                  <input type="date" id="dateOfDeparture" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Date of Departure" value={trip.dateOfDeparture}/>
               </div>
           </fieldset>
           <fieldset>
               <div className="form-group">
                   <label htmlFor="returnDate">Return Date:</label>
-                  <input type="text" id="returnDate" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Return Date" value={trip.returnDate}/>
+                  <input type="date" id="returnDate" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Return Date" value={trip.returnDate}/>
               </div>
           </fieldset>
           <fieldset>
