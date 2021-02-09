@@ -2,6 +2,9 @@ import React from "react"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
 
+
+//helps users navigate through the app
+
 export const NavBar = (props) => {
     return (
         <ul className="navbar">

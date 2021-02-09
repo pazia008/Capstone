@@ -13,6 +13,7 @@ export const TripList = () => {
     getTrips()
   }, [])
 
+  //only displays trips with the associated user
 const currentUserTrips = trips.filter(userTripObj => userTripObj.userId === parseInt(localStorage.getItem("travel_user")))
 
 

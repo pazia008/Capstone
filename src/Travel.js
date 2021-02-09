@@ -6,6 +6,9 @@ import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import "./Travel.css";
 
+
+//displays navbar and application views
+//sets the route for login and register
 export const Travel = () => (
   <>
     <Route

@@ -6,7 +6,7 @@ import { CostContext } from "./CostProvider";
 
 
 
-
+//adds new expenses to a trip
 export const CategoryForm = () => {
   const { addCosts } = useContext(CostContext)
   const {tripId} = useParams()
@@ -48,6 +48,8 @@ export const CategoryForm = () => {
 
   }
 console.log(categories)
+
+//form users will fill out to save a new cost to a trip
   return (
     <form className="categoryForm">
       <h2 className="categoryForm__title">How Much is This Bad Boy Gonna Cost?</h2>

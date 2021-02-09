@@ -1,6 +1,9 @@
 import React from "react";
 import "./Home.css"
 
+
+//homepage of the web app, just a simple About page
+
 export const Home = () => (
     <>
     <div className="header">

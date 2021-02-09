@@ -5,6 +5,9 @@ import { TripContext } from "./TripProvider"
 import { CostContext } from "../cost/CostProvider"
 import { PackContext } from "../pack/PackProvider"
 
+//displays associateed ocst and packing details with specific trips 
+//allows users to delete trips
+//has buttons for adding more expenses and packing items
 
 export const TripDetail = () => {
   const { getTripById, deleteTrip } = useContext(TripContext)
@@ -33,12 +36,13 @@ export const TripDetail = () => {
     .then(getPacks)
     }, [])
 
+    //filters over costs and packing items to make sure they display with the correct trip
     const tripCosts = costs.filter(costObj => costObj.tripId === parseInt(tripId))
 console.log(tripCosts)
 const tripPack = packs.filter(packObj => packObj.tripId === parseInt(tripId))
 console.log(tripPack)
 
-
+//this is what will display of the dom
   return (
     <section className="trip">
       <h3 className="trip__location">{trip.location}</h3>

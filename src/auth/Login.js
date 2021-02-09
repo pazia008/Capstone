@@ -13,7 +13,7 @@ export const Login = props => {
     const history = useHistory()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
+        return fetch(`http://localhost:8088/users?email=${email.current.value}`)  //looking in the api for emails
             .then(res => res.json())
             .then(user => user.length ? user[0] : false)
     }
@@ -24,14 +24,14 @@ export const Login = props => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    localStorage.setItem("travel_user", exists.id)
+                    localStorage.setItem("travel_user", exists.id)  //pushing user to homepage if they exist
                     history.push("/")
                 } else {
                     existDialog.current.showModal()
                 }
             })
     }
-
+//has the form for users to login and a link they can click on if they aren't a user to go to register
     return (
         <main className="container--login">
             <dialog className="dialog dialog--auth" ref={existDialog}>
@@ -58,8 +58,9 @@ export const Login = props => {
                     </fieldset>
                 </form>
             </section>
+            
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link to="/register">Not a member yet?</Link> 
             </section>
         </main>
         

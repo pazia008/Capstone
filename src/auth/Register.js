@@ -9,6 +9,8 @@ export const Register = (props) => {
     const conflictDialog = useRef()
     const history = useHistory()
 
+
+    //checks if a user exists in the api
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/users?email=${email.current.value}`)
             .then(res => res.json())
@@ -47,6 +49,7 @@ export const Register = (props) => {
         
     }
 
+//form for registering for the app
     return (
         <main style={{ textAlign: "center" }}>
 
