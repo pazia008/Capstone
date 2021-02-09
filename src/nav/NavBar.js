@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
-
+import {Logout} from "../Logout"
 
 //helps users navigate through the app
 
@@ -16,6 +16,9 @@ export const NavBar = (props) => {
             </li>
             <li className="navbar__item">
                 <Link className="navbar__trips" to="/trips">Saved Trips</Link>
+            </li>
+            <li className="navbar__item">
+                <button className="logout-button" onClick={Logout()}>Logout</button>
             </li>
         </ul>
     )
