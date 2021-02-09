@@ -8,7 +8,7 @@ export const TripForm = () => {
     const { addTrips } = useContext(TripContext)
     const { getUsers} = useContext(UserContext)
 
-    // const userId = sessionStorage.getItem('activeUser')
+    
 
 
     const [trip, setTrip] = useState({
@@ -26,6 +26,7 @@ export const TripForm = () => {
         getUsers()
       }, [])
 
+//makes a new trip
     const handleControlledInputChange = (event) => {
       const newTrip = { ...trip }
 
@@ -46,7 +47,7 @@ export const TripForm = () => {
         .then(() => history.push("/trips"))
       }
     
-
+//the form on the dom that users will fill out to make a new trip
     return (
       <form className="tripForm">
           <h2 className="tripForm__title">New Trip!</h2>

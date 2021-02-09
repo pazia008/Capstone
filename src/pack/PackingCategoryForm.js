@@ -7,6 +7,7 @@ import { PackContext } from "./PackProvider";
 
 
 
+//makes a form for users to fill out so they can add new items to pack to their trip
 
 export const PackingCategoryForm = () => {
   const { addPacks } = useContext(PackContext)
@@ -49,6 +50,7 @@ export const PackingCategoryForm = () => {
 
   }
 console.log(packCategories)
+//for users will fill out to save a new packing item
   return (
     <form className="packingCategoryForm">
       <h2 className="packingCategoryForm__title">What are we gonna need?</h2>

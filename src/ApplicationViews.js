@@ -14,6 +14,7 @@ import { TripProvider } from "./trip/TripProvider"
 import { UserProvider } from "./user/UserProvider"
 
 
+// more specific links in my web app that gerts users to different modules and forms
 
 export const ApplicationViews = () => {
     return (

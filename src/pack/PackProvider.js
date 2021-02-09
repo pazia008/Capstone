@@ -2,7 +2,8 @@ import React, { useState, createContext } from "react"
 
 export const PackContext = createContext()
 
-
+//allows me to use packs from my api
+//allows me to add new packing items to my api
 export const PackProvider = (props) => {
     const [packs, setPacks] = useState([])
 

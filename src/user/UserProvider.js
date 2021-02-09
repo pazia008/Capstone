@@ -1,9 +1,8 @@
 import React, { useState, createContext } from "react"
 
-// The context is imported and used by individual components that need data
 export const UserContext = createContext()
 
-// This component establishes what data can be used.
+//gets users from the api and allows me to use them for other modules
 export const UserProvider = (props) => {
     const [users, setUsers] = useState([])
 
