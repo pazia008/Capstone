@@ -2,6 +2,9 @@
 .paragraph{
     margin-bottom: 1.5em;
     color: black; 
-     
+    height: 450px;
 }
 
+.home{
+    background-image: url(../auth/newzealandflowers.jpg);
+}

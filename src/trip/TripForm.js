@@ -55,7 +55,10 @@ export const TripForm = () => {
 //the form on the dom that users will fill out to make a new trip
     return (
       <form className="tripForm">
+          <div className="title">
           <h2 className="tripForm__title">New Trip!</h2>
+          </div>
+<div className="text">
           <fieldset>
               <div className="form-group">
                   <label htmlFor="location">Location:</label>
@@ -86,6 +89,7 @@ export const TripForm = () => {
                   <input type="text" id="placeOfStay" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Accommodation" value={trip.placeOfStay}/>
               </div>
           </fieldset>
+         </div>
           <button className="btn btn-primary"
             onClick={ handleClickSaveTrip }>
             Save Trip!

@@ -2,13 +2,24 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-image: url(../auth/newzealandflowers.jpg);
   }
   
   .trip {
-      flex-basis: 28%;
+      flex-basis: 18%;
       margin: 1em;
       padding: 1em;
-      border: 1px solid rgb(160, 159, 158);
+      border: 1px solid white;
   }
 
-  
+.tripForm{
+    background-image: url(../auth/sunrise.jpg)
+}
+
+.text{
+    color: black;
+}
+
+.title{
+    color: black;
+}
