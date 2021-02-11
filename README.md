@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Travel Plan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Travel Plan is an app developed for people who like to travel, but may not be the most organized. This app helps users thoughtfully plan for whatever adventure or trip they plan on embarking. While using Travel Plan, users can record information regarding to their trip and add on details that they think may be needed (expenses they would have to pay/ plan for and items they would need to pack).
+
+## Features on the app
+
+- A form for users to fill that has basic trip information on it (location, accommodation, etc...)
+- A basic form for packing items that users may need
+- A basic form for expenses that users would need to think about while planning
+
+# Getting Started
+
+To run Travel Plan locally, start by cloning the project in your terminal with the followin command:
+
+`git clone https://github.com/pazia008/Capstone.git`
+
+
+Once you have the project successfully cloned, in your terminal run:
+
+`npm install`
+
+This will install the libraries and other dependencies used by Travel Plan
+
+
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+`npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### npm start
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Runs the app in the development mode. Open http://localhost:3000 to view Travel Plan in your browser.
 
-### `npm test`
+The page will reload if you make edits. You will also see any lint errors in the console.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Database
 
-### `npm run build`
+For this app to funcation properly, it is crucial to run JSON server in another instance of your terminal so you will have access to the data that Travel Plan is capturing. Navigate to the api directory and run the following command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`json-server -p 8088 -w database.json`
