@@ -12,7 +12,7 @@ export const CategoryForm = () => {
   const {tripId} = useParams()
   const { categories, getCategories } = useContext(CategoryContext)
   
-  
+  //sets the state for the api
   const [cost, setCosts] = useState({
       tripId: parseInt(tripId),
       categoryId: 0,
@@ -22,7 +22,7 @@ export const CategoryForm = () => {
 
   const history = useHistory();
   
-
+//getCategories will run after render
   useEffect(() => {
         getCategories()
       }, [])
@@ -30,16 +30,20 @@ export const CategoryForm = () => {
 
 
   const handleControlledInputChange = (event) => {
+    //create a copy, make changes, and then set state
     const newCost = { ...cost }
     let selectedVal = event.target.value
-
+//making sure the values are integers and not strings
     if (event.target.id.includes("Id")) {
       selectedVal = parseInt(selectedVal)
     }
+    //Set the property to the new value using object bracket notation
     newCost[event.target.id] = selectedVal
+    //update the state
     setCosts(newCost)
   }
 
+  //saves a new cost and pushes users to the /trips link
   const handleClickSaveLocation = (event) => {
     event.preventDefault()
 
@@ -47,7 +51,7 @@ export const CategoryForm = () => {
       .then(() => history.push("/trips"))
 
   }
-console.log(categories)
+
 
 //form users will fill out to save a new cost to a trip
   return (

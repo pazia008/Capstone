@@ -10,7 +10,7 @@ export const TripForm = () => {
 
     
 
-
+//sets the state for how it will appear in the api
     const [trip, setTrip] = useState({
         userId: parseInt(localStorage.getItem('travel_user')),
         location: "",
@@ -22,6 +22,7 @@ export const TripForm = () => {
 
     const history = useHistory();
 
+    //getUsers will run after render
     useEffect(() => {
         getUsers()
       }, [])
@@ -41,7 +42,7 @@ export const TripForm = () => {
 
     const handleClickSaveTrip = (event) => {
       event.preventDefault() 
-
+//makes it so users cant enter a return date that is earlier than the departure date
         if(trip.dateOfDeparture > trip.returnDate){
             alert("Date of Departure Must be before Return Date");
         }else{

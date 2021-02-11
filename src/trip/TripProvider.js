@@ -5,6 +5,7 @@ export const TripContext = createContext()
 //gets trips from the api and allows me to use them in other modules
 //allows me to add trips to the api
 //allows me to delete trips from the api
+
 export const TripProvider = (props) => {
     const [trips, setTrips] = useState([])
 

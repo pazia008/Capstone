@@ -3,6 +3,7 @@ import React, { useState, createContext } from "react"
 export const CategoryContext = createContext()
 
 //allows me to use cost catergories from my api
+
 export const CategoryProvider = (props) => {
     const [categories, setCategories] = useState([])
 
