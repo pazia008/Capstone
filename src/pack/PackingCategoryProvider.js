@@ -3,6 +3,7 @@ import React, { useState, createContext } from "react"
 export const PackingCategoryContext = createContext()
 
 //allows me to use packingCateogry from my api
+
 export const PackingCategoryProvider = (props) => {
     const [packCategories, setPackCategories] = useState([])
 
@@ -20,4 +21,4 @@ export const PackingCategoryProvider = (props) => {
             {props.children}
         </PackingCategoryContext.Provider>
     )
-}
+    }

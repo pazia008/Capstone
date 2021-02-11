@@ -14,7 +14,7 @@ export const PackingCategoryForm = () => {
   const {tripId} = useParams()
   const { packCategories, getPackingCategories } = useContext(PackingCategoryContext)
   
-  
+  //sets the state in the api
   const [pack, setPacks] = useState({
       tripId: parseInt(tripId),
       packingCategoryId: 0,
@@ -24,7 +24,7 @@ export const PackingCategoryForm = () => {
 
   const history = useHistory();
   
-
+//getPackingCategories will run after render
   useEffect(() => {
         getPackingCategories()
       }, [])
@@ -32,16 +32,20 @@ export const PackingCategoryForm = () => {
 
 
   const handleControlledInputChange = (event) => {
+      //create a copy, make changes, and then set state
     const newPack = { ...pack }
     let selectedVal = event.target.value
-
+//making sure the values are integers and not strings
     if (event.target.id.includes("Id")) {
       selectedVal = parseInt(selectedVal)
     }
+    //Set the property to the new value using object bracket notation
     newPack[event.target.id] = selectedVal
+    //update the state
     setPacks(newPack)
   }
 
+  //saves a new packing item then pushes users to the /trips link
   const handleClickSaveLocation = (event) => {
     event.preventDefault()
 
@@ -49,8 +53,8 @@ export const PackingCategoryForm = () => {
       .then(() => history.push("/trips"))
 
   }
-console.log(packCategories)
-//for users will fill out to save a new packing item
+
+//form users will fill out to save a new packing item
   return (
     <form className="packingCategoryForm">
       <h2 className="packingCategoryForm__title">What are we gonna need?</h2>

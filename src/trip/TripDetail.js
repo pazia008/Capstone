@@ -19,6 +19,7 @@ export const TripDetail = () => {
 	const {tripId} = useParams();
 	const history = useHistory();
 
+//deletes trips the sends users to the /trips link
     const handleRelease = () => {
         deleteTrip(trip.id)
           .then(() => {
@@ -26,8 +27,11 @@ export const TripDetail = () => {
           })
       }
 
+      //getTripById will run after render
+      //then is sets trip equal to response 
+      //then it getsCosts and getPacks to run 
+
   useEffect(() => {
-    console.log("useEffect", tripId)
     getTripById(tripId)
     .then((response) => {
       setTrip(response)
@@ -38,9 +42,9 @@ export const TripDetail = () => {
 
     //filters over costs and packing items to make sure they display with the correct trip
     const tripCosts = costs.filter(costObj => costObj.tripId === parseInt(tripId))
-console.log(tripCosts)
+
 const tripPack = packs.filter(packObj => packObj.tripId === parseInt(tripId))
-console.log(tripPack)
+
 
 //this is what will display of the dom
   return (

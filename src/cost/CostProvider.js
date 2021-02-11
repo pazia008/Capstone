@@ -4,6 +4,7 @@ export const CostContext = createContext()
 
 //allows me to use costs from my api
 //allows me to add costs to my api
+
 export const CostProvider = (props) => {
     const [costs, setCosts] = useState([])
 
