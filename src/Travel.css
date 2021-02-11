@@ -32,11 +32,11 @@ address {
 
 button{
     color: black;
-    background-color: grey;
+    background-color: white;
     border-radius: 5px;
-
+border-color: tan;
     
 }
 button:hover{
-    color: white;
+    color: tan;
 }

@@ -2,7 +2,8 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    background-color: rgb(103, 105, 105);
+    background-color: rgb(228, 204, 173);
+    
 }
 
 .navbar__item {
