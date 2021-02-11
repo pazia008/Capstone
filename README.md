@@ -35,8 +35,4 @@ Runs the app in the development mode. Open http://localhost:3000 to view Travel 
 
 The page will reload if you make edits. You will also see any lint errors in the console.
 
-# Database
 
-For this app to funcation properly, it is crucial to run JSON server in another instance of your terminal so you will have access to the data that Travel Plan is capturing. Navigate to the api directory and run the following command:
-
-`json-server -p 8088 -w database.json`
