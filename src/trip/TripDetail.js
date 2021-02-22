@@ -48,14 +48,16 @@ const tripPack = packs.filter(packObj => packObj.tripId === parseInt(tripId))
 
 //this is what will display of the dom
   return (
-    <section className="trip">
+    <section className="tripDetail">
+        <div className="tripTitle">
       <h3 className="trip__location">{trip.location}</h3>
       <div className="trip__dateOfDeparture">Date of Departure: {trip.dateOfDeparture}</div>
       <div className="trip__returnDate">Return Date: {trip.returnDate}</div>
       <div className="trip__transportType">Type of Transportation: {trip.transportType}</div>
       <div className="trip__placeOfStay">Accommodation: {trip.placeOfStay}</div>
-      
-      <div>
+      </div>
+      <div className="tripElements">
+      <div className="costOfTrips">   
         <h3 className="trip__cost">Costs:</h3>
   <ul>{tripCosts.map(costObject => <li>{costObject.name}: ${costObject.cost}</li>)}</ul>
         <button onClick={() => {
@@ -63,12 +65,13 @@ const tripPack = packs.filter(packObj => packObj.tripId === parseInt(tripId))
                 }}>Add an Expense</button>
      </div>
 
-     <div>
+     <div className="packForTrip">
         <h3 className="trip__pack">What to Pack:</h3>
   <ul>{tripPack.map(packObject => <li>{packObject.name}</li>)}</ul>
         <button onClick={() => {
             history.push(`/trips/packing/${trip.id}`)          
                 }}>Need to Pack Something Else?</button>
+     </div>
      </div>
      <button onClick={handleRelease}>Delete Trip</button>
     </section>

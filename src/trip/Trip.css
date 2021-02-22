@@ -23,3 +23,18 @@
 .title{
     color: black;
 }
+
+
+.tripElements{
+    display: inline-block;
+    margin-left: 5.5%;
+    color: white;
+}
+
+.tripDetail{
+    background-image: url(../auth/ocean.jpg)
+}
+
+.tripTitle{
+    color: white;
+}
